@@ -5,11 +5,12 @@ import retrofit2.http.*
 
 // ─── Data classes ────────────────────────────────────────────────────────────
 
-data class AiRequest(
+data class SendMessageRequest(
+    val message: String,
     val model: String,
-    val messages: List<Map<String, String>>,
-    val chatId: String? = null,
-    val webSearch: Boolean = false
+    val conversationId: String? = null,
+    val webSearch: Boolean = false,
+    val showThinking: Boolean = false
 )
 
 data class ChatHistoryItem(
@@ -19,9 +20,19 @@ data class ChatHistoryItem(
 )
 
 data class ChatMessageItem(
+    val id: String = "",
     val role: String,
     val content: String,
-    val thinking: String? = null
+    val thinking: String? = null,
+    val model: String? = null
+)
+
+data class ChatHistoryResponse(
+    val conversations: List<ChatHistoryItem>
+)
+
+data class ChatMessagesResponse(
+    val messages: List<ChatMessageItem>
 )
 
 // ─── Services ────────────────────────────────────────────────────────────────
@@ -32,23 +43,30 @@ interface AuthService {
 
     @POST("api/auth/verify-code")
     suspend fun verifyCode(@Body body: Map<String, String>): Response<Map<String, Any>>
+
+    @POST("api/auth/sync-google")
+    suspend fun syncGoogle(@Body body: Map<String, String>): Response<Map<String, Any>>
 }
 
 interface ChatService {
-    @POST("api/chat/message")
-    suspend fun sendMessage(
-        @Header("Authorization") token: String,
-        @Body request: AiRequest
-    ): Response<Map<String, Any>>
+    // Note: /api/chat/message returns text/event-stream (SSE).
+    // Use OkHttp directly in ChatActivity for streaming; this interface
+    // is kept for history/messages JSON endpoints only.
 
     @GET("api/chat/history")
     suspend fun getChatHistory(
         @Header("Authorization") token: String
-    ): Response<List<ChatHistoryItem>>
+    ): Response<ChatHistoryResponse>
 
     @GET("api/chat/{chatId}/messages")
     suspend fun getChatMessages(
         @Header("Authorization") token: String,
         @Path("chatId") chatId: String
-    ): Response<List<ChatMessageItem>>
+    ): Response<ChatMessagesResponse>
+
+    @DELETE("api/chat/{chatId}")
+    suspend fun deleteConversation(
+        @Header("Authorization") token: String,
+        @Path("chatId") chatId: String
+    ): Response<Map<String, Any>>
 }

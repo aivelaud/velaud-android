@@ -14,27 +14,29 @@ class ModelBottomSheet : BottomSheetDialogFragment() {
 
     private var _binding: BottomSheetModelBinding? = null
     private val binding get() = _binding!!
-    private var onModelSelected: ((String) -> Unit)? = null
+    // Callback now provides (modelId, displayName)
+    private var onModelSelected: ((String, String) -> Unit)? = null
 
     data class ModelItem(
-        val name: String,
+        val id: String,         // backend model key
+        val name: String,       // display name
         val description: String
     )
 
     private val models = listOf(
-        ModelItem("Claude Opus 4.7", "En güçlü model. Karmaşık akıl yürütme, uzun kodlama ve derin analizde lider."),
-        ModelItem("Claude Sonnet 4.6", "Hız ve zekanın dengesi. Günlük görevler için hızlı ve verimli."),
-        ModelItem("Claude Opus 4.6", "Uzun içerik üretimi ve detaylı akademik yazımda güçlü."),
-        ModelItem("GPT 5.4", "Genel amaçlı asistan. Yaratıcı yazım ve sohbette çok yönlü."),
-        ModelItem("DeepSeek V4", "Matematik, mantık ve algoritma problemlerinde uzman."),
-        ModelItem("GPT 5.4 Pro", "Gelişmiş araştırma ve profesyonel iş görevleri için optimize."),
-        ModelItem("Kimi k-2.6", "Çok uzun bağlam penceresi ve güçlü çoklu dil desteği.")
+        ModelItem("claude-opus-4-7",   "Claude Opus 4.7",  "En güçlü model. Karmaşık akıl yürütme ve derin analizde lider."),
+        ModelItem("claude-sonnet-4-6", "Claude Sonnet 4.6","Hız ve zekanın dengesi. Günlük görevler için verimli."),
+        ModelItem("claude-opus-4-6",   "Claude Opus 4.6",  "Uzun içerik üretimi ve akademik yazımda güçlü."),
+        ModelItem("gpt-5-4",           "GPT 5.4",          "Genel amaçlı asistan. Yaratıcı yazım ve sohbette çok yönlü."),
+        ModelItem("gpt-5-4-pro",       "GPT 5.4 Pro",      "Gelişmiş araştırma ve profesyonel görevler için optimize."),
+        ModelItem("kimi-k-2-6",        "Kimi k-2.6",       "Çok uzun bağlam penceresi ve güçlü çok dilli destek."),
+        ModelItem("deepseek-v4",       "DeepSeek V4",      "Matematik, mantık ve algoritma problemlerinde uzman.")
     )
 
-    private var selectedModel = "Claude Opus 4.7"
+    private var selectedModelId = "claude-opus-4-7"
 
     companion object {
-        fun newInstance(onSelected: (String) -> Unit): ModelBottomSheet {
+        fun newInstance(onSelected: (String, String) -> Unit): ModelBottomSheet {
             return ModelBottomSheet().apply {
                 onModelSelected = onSelected
             }
@@ -48,7 +50,6 @@ class ModelBottomSheet : BottomSheetDialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         val adapter = ModelAdapter()
         binding.rvModels.layoutManager = LinearLayoutManager(requireContext())
         binding.rvModels.adapter = adapter
@@ -66,12 +67,11 @@ class ModelBottomSheet : BottomSheetDialogFragment() {
             fun bind(item: ModelItem) {
                 b.tvModelName.text = item.name
                 b.tvModelDesc.text = item.description
-                b.ivCheck.visibility = if (item.name == selectedModel) View.VISIBLE else View.INVISIBLE
-                b.root.isActivated = item.name == selectedModel
-
+                b.ivCheck.visibility = if (item.id == selectedModelId) View.VISIBLE else View.INVISIBLE
+                b.root.isActivated = item.id == selectedModelId
                 b.root.setOnClickListener {
-                    selectedModel = item.name
-                    onModelSelected?.invoke(item.name)
+                    selectedModelId = item.id
+                    onModelSelected?.invoke(item.id, item.name)
                     notifyDataSetChanged()
                     dismissAllowingStateLoss()
                 }
