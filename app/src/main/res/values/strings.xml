@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Velaud</string>
+    <string name="default_web_client_id">856686132740-kbr59oul575kmf9deiu3094lc82qvour.apps.googleusercontent.com</string>
+    <string name="google_app_id">1:856686132740:android:ba1666f405aa98208abf51</string>
+    <string name="google_api_key">AIzaSyAdjgPueHp5DFrsA0qMiI7dM9J0ATcT0bc</string>
+    <string name="project_id">velaud</string>
+    <string name="storage_bucket">velaud.firebasestorage.app</string>
+    <string name="drawer_fragment_behavior">@string/drawer_fragment_behavior</string>
+</resources>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Auth screen palette (warm cream) -->
+    <color name="auth_bg">#F3EEE6</color>
+    <color name="surface">#FBF9F5</color>
+    <color name="ink">#2B2621</color>
+    <color name="muted">#8C8175</color>
+    <color name="line">#E4DBCC</color>
+    <color name="clay">#C96442</color>
+    <color name="clay_hover">#B4573A</color>
+    <color name="clay_soft">#EBD9CF</color>
+    <color name="field_bg">#FFFFFF</color>
+    <color name="placeholder">#A79C8E</color>
+    <color name="info_bg">#EFE7DA</color>
+
+    <!-- Chat screen palette (dark) -->
+    <color name="bg_dark">#0F0F0F</color>
+    <color name="bg_dark_2">#171717</color>
+    <color name="surface_dark">#1C1C1C</color>
+    <color name="surface_dark_2">#232323</color>
+    <color name="border">#2E2E2E</color>
+    <color name="border_2">#3A3A3A</color>
+    <color name="bubble_bg">#262626</color>
+    <color name="text_primary">#F5F5F5</color>
+    <color name="muted_dark">#9A9A9A</color>
+    <color name="muted_2">#6E6E6E</color>
+    <color name="orange">#FF6A2B</color>
+    <color name="orange_deep">#E5561C</color>
+
+    <!-- Aliases for easy reference -->
+    <color name="muted">@color/muted_dark</color>
+
+    <!-- Status bar -->
+    <color name="status_bar_auth">#F3EEE6</color>
+    <color name="status_bar_chat">#0F0F0F</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+</resources>

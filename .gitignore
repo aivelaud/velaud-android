@@ -1,0 +1,19 @@
+*.iml
+.gradle
+/local.properties
+/.idea
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+# Secrets — never commit real values
+gradle.properties
+# Keep the example file
+!gradle.properties.example
+google-services.json
+# Firebase admin (local dev only)
+firebase-adminsdk.json
+backend/.env
+backend/data/

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base theme -->
+    <style name="Theme.Velaud" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/clay</item>
+        <item name="colorPrimaryVariant">@color/clay_hover</item>
+        <item name="colorOnPrimary">#FCF7F2</item>
+        <item name="android:windowBackground">@color/bg_dark</item>
+        <item name="android:statusBarColor">@color/bg_dark</item>
+        <item name="android:navigationBarColor">@color/bg_dark</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="bottomSheetDialogTheme">@style/Theme.Velaud.BottomSheet</item>
+    </style>
+
+    <!-- Auth screens (light theme) -->
+    <style name="Theme.Velaud.Auth" parent="Theme.Velaud">
+        <item name="android:windowBackground">@color/auth_bg</item>
+        <item name="android:statusBarColor">@color/auth_bg</item>
+        <item name="android:navigationBarColor">@color/auth_bg</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <!-- Splash -->
+    <style name="Theme.Velaud.Splash" parent="Theme.Velaud">
+        <item name="android:windowBackground">@color/bg_dark</item>
+    </style>
+
+    <!-- Main/Chat screens (dark theme) -->
+    <style name="Theme.Velaud.Main" parent="Theme.Velaud">
+        <item name="android:windowBackground">@color/bg_dark</item>
+        <item name="android:statusBarColor">@color/bg_dark</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <!-- Bottom Sheet style -->
+    <style name="Theme.Velaud.BottomSheet" parent="Theme.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Widget.Velaud.BottomSheet</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="Widget.Velaud.BottomSheet" parent="Widget.MaterialComponents.BottomSheet">
+        <item name="android:background">@drawable/bg_bottom_sheet</item>
+        <item name="backgroundTint">@color/bg_dark_2</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Velaud.BottomSheet</item>
+    </style>
+
+    <style name="ShapeAppearance.Velaud.BottomSheet" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">24dp</item>
+        <item name="cornerSizeTopRight">24dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
+
+</resources>

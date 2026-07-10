@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "856686132740",
+    "project_id": "velaud",
+    "storage_bucket": "velaud.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:856686132740:android:ba1666f405aa98208abf51",
+        "android_client_info": {
+          "package_name": "com.velaud.chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "856686132740-kbr59oul575kmf9deiu3094lc82qvour.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdjgPueHp5DFrsA0qMiI7dM9J0ATcT0bc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "856686132740-kbr59oul575kmf9deiu3094lc82qvour.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

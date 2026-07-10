@@ -1,0 +1,18 @@
+# Copy this to gradle.properties (git-ignored) and fill in real values
+# Or supply as GitHub Actions secrets and inject via CI
+
+BACKEND_URL="https://YOUR_REPLIT_BACKEND_URL"
+
+# Azure AI - Primary (Claude + GPT 5.4)
+AZURE_KEY_PRIMARY="DPG73W9c..."
+AZURE_CLAUDE_URL="https://donerai-beyin-abd-project-resour.services.ai.azure.com/anthropic/v1/messages"
+AZURE_GPT_URL="https://donerai-beyin-abd-project-resour.cognitiveservices.azure.com/openai/responses?api-version=2025-04-01-preview"
+
+# Azure AI - Secondary (GPT 5.4 Pro + Kimi + DeepSeek)
+AZURE_KEY_SECONDARY="AIerXRjF..."
+AZURE_GPT_PRO_URL="https://ugurk-mksipy9r-swedencentral.cognitiveservices.azure.com/openai/responses?api-version=2025-04-01-preview"
+AZURE_KIMI_URL="https://ugurk-mksipy9r-swedencentral.services.ai.azure.com/models/chat/completions?api-version=2024-05-01-preview"
+AZURE_DEEPSEEK_URL="https://ugurk-mksipy9r-swedencentral.services.ai.azure.com/models/chat/completions?api-version=2024-05-01-preview"
+
+# Tavily
+TAVILY_KEY="tvly-dev-..."

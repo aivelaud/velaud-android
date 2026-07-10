@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Velaud logo: orange bg + white fan/swirl shape with two eye dots -->
+    <path
+        android:fillColor="#C96442"
+        android:pathData="M0,0h108v108h-108z"/>
+    <!-- White swirl/fan blade shape (Velaud logo) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,18 C38,18 28,28 26,38 C22,36 18,36 16,40 C12,46 16,54 22,56 C20,62 22,68 28,72 C34,76 42,74 46,70 C48,76 52,80 58,80 C66,82 74,76 74,68 C80,68 86,64 88,58 C92,50 86,42 78,42 C78,32 70,22 60,18 C58,18 56,18 54,18Z"/>
+    <!-- Two eye dots -->
+    <circle android:fillColor="#C96442" android:cx="46" android:cy="50" android:r="5"/>
+    <circle android:fillColor="#C96442" android:cx="62" android:cy="50" android:r="5"/>
+</vector>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- OTP input box style -->
+    <style name="OtpBoxStyle">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:inputType">number</item>
+        <item name="android:maxLength">1</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:textColor">@color/clay_hover</item>
+        <item name="android:fontFamily">@font/fraunces_semi</item>
+        <item name="android:background">@drawable/bg_otp_box</item>
+        <item name="android:textCursorDrawable">@drawable/cursor_clay</item>
+        <item name="android:imeOptions">flagNoExtractUi</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+</resources>

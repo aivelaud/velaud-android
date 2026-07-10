@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/auth_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="26dp"
+        android:paddingEnd="26dp"
+        android:paddingTop="22dp"
+        android:paddingBottom="26dp"
+        android:minHeight="600dp">
+
+        <!-- Topbar -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="34dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="VELAUD"
+                android:textColor="@color/clay"
+                android:fontFamily="@font/fraunces_medium"
+                android:textSize="15sp"
+                android:letterSpacing="0.14"/>
+        </FrameLayout>
+
+        <!-- Hero Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingTop="8dp"
+            android:layout_marginTop="8dp">
+
+            <!-- App Icon with 3D effect -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:layout_gravity="center_horizontal"
+                app:cardCornerRadius="26dp"
+                app:cardElevation="14dp"
+                app:cardBackgroundColor="@color/clay">
+                <ImageView
+                    android:id="@+id/ivAppIcon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_launcher"/>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:text="Velaud Agent\nTüm Asistanlar Tek Planda"
+                android:textColor="@color/ink"
+                android:fontFamily="@font/fraunces_medium"
+                android:textSize="28sp"
+                android:gravity="center"
+                android:lineSpacingMultiplier="1.18"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Tüm Yapay Zekalar Sadece 1 Abonelik&#8217;de\n3 Gün Deneme Süresi"
+                android:textColor="@color/muted"
+                android:textSize="14.5sp"
+                android:gravity="center"
+                android:lineSpacingMultiplier="1.5"/>
+        </LinearLayout>
+
+        <!-- Actions Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="24dp">
+
+            <!-- Google Button -->
+            <LinearLayout
+                android:id="@+id/btnGoogleContinue"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="@drawable/bg_btn_ghost"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_google"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Google ile devam et"
+                    android:textColor="@color/ink"
+                    android:textSize="15.5sp"
+                    android:textStyle="normal"
+                    android:fontFamily="@font/inter_medium"/>
+            </LinearLayout>
+
+            <!-- Divider -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="4dp">
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/line"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginEnd="14dp"
+                    android:text="veya"
+                    android:textColor="@color/muted"
+                    android:textSize="12.5sp"
+                    android:letterSpacing="0.08"/>
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/line"/>
+            </LinearLayout>
+
+            <!-- Email Field -->
+            <LinearLayout
+                android:id="@+id/layoutEmailField"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_field"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:layout_marginTop="4dp">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_email"
+                    android:tint="@color/muted"/>
+
+                <EditText
+                    android:id="@+id/etEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:background="@null"
+                    android:hint="E-posta adresin"
+                    android:hintTextColor="@color/placeholder"
+                    android:textColor="@color/ink"
+                    android:textSize="15.5sp"
+                    android:inputType="textEmailAddress"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true"
+                    android:fontFamily="@font/inter_regular"/>
+            </LinearLayout>
+
+            <!-- Email Continue Button -->
+            <Button
+                android:id="@+id/btnEmailContinue"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="12dp"
+                android:text="E-posta ile devam et"
+                android:textColor="#FCF7F2"
+                android:textSize="15.5sp"
+                android:fontFamily="@font/inter_medium"
+                android:background="@drawable/bg_btn_primary"
+                android:stateListAnimator="@null"
+                android:alpha="0.55"
+                android:enabled="false"/>
+
+            <!-- Progress -->
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:visibility="gone"
+                android:indeterminateTint="@color/clay"/>
+
+            <!-- Footer -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:gravity="center"
+                android:text="Devam ederek Velaud Kullanım Koşulları'nı\nve Gizlilik Politikası'nı kabul edersin."
+                android:textColor="@color/muted"
+                android:textSize="12sp"
+                android:lineSpacingMultiplier="1.55"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

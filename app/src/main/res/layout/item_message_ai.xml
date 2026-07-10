@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp">
+
+    <!-- Thinking head (visible only if has thinking) -->
+    <LinearLayout
+        android:id="@+id/layoutThinkingHead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:visibility="gone">
+
+        <!-- Dot logo -->
+        <GridLayout
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:rowCount="3"
+            android:columnCount="3">
+            <View android:layout_width="6dp" android:layout_height="6dp" android:background="@drawable/bg_dot_static"/>
+            <View android:layout_width="6dp" android:layout_height="6dp" android:background="@drawable/bg_dot_static" android:layout_marginStart="2dp"/>
+            <View android:layout_width="6dp" android:layout_height="6dp" android:background="@drawable/bg_dot_static" android:layout_marginStart="2dp"/>
+            <View android:layout_width="6dp" android:layout_height="6dp" android:background="@drawable/bg_dot_static" android:layout_marginTop="2dp"/>
+            <View android:layout_width="6dp" android:layout_height="6dp" android:background="@drawable/bg_dot_static" android:layout_marginStart="2dp" android:layout_marginTop="2dp"/>
+            <View android:layout_width="6dp" android:layout_height="6dp" android:background="@drawable/bg_dot_static" android:layout_marginStart="2dp" android:layout_marginTop="2dp"/>
+            <View android:layout_width="6dp" android:layout_height="6dp" android:background="@drawable/bg_dot_static" android:layout_marginTop="2dp"/>
+            <View android:layout_width="6dp" android:layout_height="6dp" android:background="@drawable/bg_dot_static" android:layout_marginStart="2dp" android:layout_marginTop="2dp"/>
+            <View android:layout_width="6dp" android:layout_height="6dp" android:background="@drawable/bg_dot_static" android:layout_marginStart="2dp" android:layout_marginTop="2dp"/>
+        </GridLayout>
+
+        <LinearLayout
+            android:id="@+id/btnThinkingToggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginStart="9dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="2dp">
+
+            <TextView
+                android:id="@+id/tvThinkingLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thinking"
+                android:textColor="@color/muted"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/inter_semi"/>
+
+            <TextView
+                android:id="@+id/tvThinkingTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:text=""
+                android:textColor="@color/muted_2"
+                android:textSize="13.5sp"
+                android:fontFamily="@font/inter_regular"/>
+
+            <ImageView
+                android:id="@+id/ivThinkingChevron"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginStart="7dp"
+                android:src="@drawable/ic_chevron_down"
+                android:tint="@color/muted"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Thinking body (expandable) -->
+    <TextView
+        android:id="@+id/tvThinkingBody"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="6dp"
+        android:paddingStart="14dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:background="@drawable/bg_thinking_body"
+        android:textColor="@color/muted"
+        android:textSize="14sp"
+        android:fontFamily="@font/inter_regular"
+        android:lineSpacingMultiplier="1.6"
+        android:visibility="gone"/>
+
+    <!-- AI Response -->
+    <TextView
+        android:id="@+id/tvAnswer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/text_primary"
+        android:textSize="16sp"
+        android:fontFamily="@font/inter_regular"
+        android:lineSpacingMultiplier="1.6"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"/>
+
+    <!-- Action buttons row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="4dp">
+
+        <ImageButton
+            android:id="@+id/btnCopy"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:background="@drawable/bg_action_btn"
+            android:src="@drawable/ic_copy"
+            android:tint="@color/muted"
+            android:padding="8dp"/>
+
+        <ImageButton
+            android:id="@+id/btnThumbUp"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:background="@drawable/bg_action_btn"
+            android:src="@drawable/ic_thumbup"
+            android:tint="@color/muted"
+            android:padding="8dp"/>
+
+        <ImageButton
+            android:id="@+id/btnThumbDown"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:background="@drawable/bg_action_btn"
+            android:src="@drawable/ic_thumbdown"
+            android:tint="@color/muted"
+            android:padding="8dp"/>
+
+        <ImageButton
+            android:id="@+id/btnRegenerate"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:background="@drawable/bg_action_btn"
+            android:src="@drawable/ic_regenerate"
+            android:tint="@color/muted"
+            android:padding="8dp"/>
+
+        <ImageButton
+            android:id="@+id/btnShare"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:background="@drawable/bg_action_btn"
+            android:src="@drawable/ic_share"
+            android:tint="@color/muted"
+            android:padding="8dp"/>
+    </LinearLayout>
+
+</LinearLayout>

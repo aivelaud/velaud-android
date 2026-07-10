@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/auth_bg"
+    android:paddingStart="26dp"
+    android:paddingEnd="26dp"
+    android:paddingTop="22dp"
+    android:paddingBottom="26dp">
+
+    <!-- Topbar -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="34dp">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="start|center_vertical"
+            android:background="@drawable/bg_icon_btn_auth"
+            android:src="@drawable/ic_back"
+            android:tint="@color/ink"
+            android:padding="7dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="VELAUD"
+            android:textColor="@color/clay"
+            android:fontFamily="@font/fraunces_medium"
+            android:textSize="15sp"
+            android:letterSpacing="0.14"/>
+    </FrameLayout>
+
+    <!-- Hero -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingTop="8dp">
+
+        <!-- App Icon -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="78dp"
+            android:layout_height="78dp"
+            android:layout_gravity="center_horizontal"
+            app:cardCornerRadius="22dp"
+            app:cardElevation="14dp"
+            app:cardBackgroundColor="@color/clay">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_launcher"/>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:text="Kodu doğrula"
+            android:textColor="@color/ink"
+            android:fontFamily="@font/fraunces_medium"
+            android:textSize="30sp"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Sana 6 haneli bir güvenlik kodu gönderdik.\nDevam etmek için kodu aşağıya gir."
+            android:textColor="@color/muted"
+            android:textSize="14.5sp"
+            android:gravity="center"
+            android:lineSpacingMultiplier="1.5"/>
+
+        <!-- OTP Boxes -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="28dp"
+            android:layout_gravity="center_horizontal">
+
+            <EditText android:id="@+id/etCode1" style="@style/OtpBoxStyle"/>
+            <EditText android:id="@+id/etCode2" style="@style/OtpBoxStyle" android:layout_marginStart="9dp"/>
+            <EditText android:id="@+id/etCode3" style="@style/OtpBoxStyle" android:layout_marginStart="9dp"/>
+            <EditText android:id="@+id/etCode4" style="@style/OtpBoxStyle" android:layout_marginStart="9dp"/>
+            <EditText android:id="@+id/etCode5" style="@style/OtpBoxStyle" android:layout_marginStart="9dp"/>
+            <EditText android:id="@+id/etCode6" style="@style/OtpBoxStyle" android:layout_marginStart="9dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Actions -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Info Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/bg_info_card"
+            android:padding="14dp">
+
+            <FrameLayout
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:background="@drawable/bg_info_icon">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_email"
+                    android:tint="@color/clay_hover"/>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="12dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/tvEmailAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ornek@gmail.com"
+                    android:textColor="@color/ink"
+                    android:textSize="13sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="adresine kodu ilettik. Gönderilen kodu girin."
+                    android:textColor="@color/muted"
+                    android:textSize="13sp"
+                    android:lineSpacingMultiplier="1.45"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Verify Button -->
+        <Button
+            android:id="@+id/btnVerify"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="14dp"
+            android:text="Doğrula ve devam et"
+            android:textColor="#FCF7F2"
+            android:textSize="15.5sp"
+            android:fontFamily="@font/inter_medium"
+            android:background="@drawable/bg_btn_primary"
+            android:stateListAnimator="@null"
+            android:alpha="0.5"
+            android:enabled="false"/>
+
+        <!-- Progress -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            android:indeterminateTint="@color/clay"/>
+
+        <!-- Resend -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginTop="14dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kod gelmedi mi? "
+                android:textColor="@color/muted"
+                android:textSize="13sp"/>
+
+            <Button
+                android:id="@+id/btnResend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tekrar gönder (30)"
+                android:textColor="@color/clay"
+                android:textSize="13sp"
+                android:fontFamily="@font/inter_semi"
+                android:background="@null"
+                android:stateListAnimator="@null"
+                android:padding="0dp"
+                android:enabled="false"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

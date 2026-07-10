@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp">
+
+    <!-- Thinking head row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- Dot logo (3x3 grid) -->
+        <GridLayout
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:rowCount="3"
+            android:columnCount="3">
+            <View android:id="@+id/dot1" android:layout_width="6dp" android:layout_height="6dp" android:background="@drawable/bg_dot"/>
+            <View android:id="@+id/dot2" android:layout_width="6dp" android:layout_height="6dp" android:background="@drawable/bg_dot" android:layout_marginStart="2dp"/>
+            <View android:id="@+id/dot3" android:layout_width="6dp" android:layout_height="6dp" android:background="@drawable/bg_dot" android:layout_marginStart="2dp"/>
+            <View android:layout_width="6dp" android:layout_height="6dp" android:background="@drawable/bg_dot" android:layout_marginTop="2dp"/>
+            <View android:layout_width="6dp" android:layout_height="6dp" android:background="@drawable/bg_dot" android:layout_marginStart="2dp" android:layout_marginTop="2dp"/>
+            <View android:layout_width="6dp" android:layout_height="6dp" android:background="@drawable/bg_dot" android:layout_marginStart="2dp" android:layout_marginTop="2dp"/>
+            <View android:layout_width="6dp" android:layout_height="6dp" android:background="@drawable/bg_dot" android:layout_marginTop="2dp"/>
+            <View android:layout_width="6dp" android:layout_height="6dp" android:background="@drawable/bg_dot" android:layout_marginStart="2dp" android:layout_marginTop="2dp"/>
+            <View android:layout_width="6dp" android:layout_height="6dp" android:background="@drawable/bg_dot" android:layout_marginStart="2dp" android:layout_marginTop="2dp"/>
+        </GridLayout>
+
+        <TextView
+            android:id="@+id/tvThinkingLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:text="Thinking"
+            android:textColor="@color/muted"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/inter_semi"/>
+
+        <TextView
+            android:id="@+id/tvThinkingTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:text=""
+            android:textColor="@color/muted_2"
+            android:textSize="13.5sp"
+            android:fontFamily="@font/inter_regular"/>
+    </LinearLayout>
+
+</LinearLayout>
